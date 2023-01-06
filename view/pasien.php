@@ -96,15 +96,33 @@
                 <form action="POST">
                   <a href="updatePasien.php?id_pasien=<?= $row['id_pasien']; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                   |
-                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                  <button type='button' id='id_pasien<?= $row['id_pasien'] ?>'>Delete
+                  </button>
                 </form>
               </th>
             </tr>
+            <script>
+              var button = document.querySelector('#id_pasien<?= $row['id_pasien'] ?>');
+              button.onclick = function() {
+                Swal.fire({
+                  title: 'Peringatan!',
+                  text: "hapus enggak ya?",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Confirm'
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    document.location.href = 'backend/delete.php?id_pasien=<?= $row['id_pasien'] ?>';
+                  }
+                })
+              }
+            </script>
         <?php }
         } ?>
       </tbody>
     </table>
   </div>
 </main>
+
 
 <?php include 'layouts/bottom_link.php'; ?>

@@ -12,3 +12,5 @@ if ($idPasien = $_GET['id_pasien']) {
     </script>
     ";
 }
+
+// ini juga sama tinggal nambahin if lagi dibawah buat delet

@@ -2,9 +2,7 @@
 module.exports = {
   darkMode: 'media',
   content: [
-    "./view/halaman/*.php",
-    "./view/*.html",
-    "./view/*.php",
+    "./view/**/*.{html,php}",
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {
